@@ -53,6 +53,7 @@ const App = () => {
     if (Boolean(student.name?.length && !student.classes?.length)) {
       try {
         (async () => {
+          // API 1 => Fetch student details from Students table
           const classIds = await base("Students")
             .select({
               view: "Grid view",
@@ -68,6 +69,7 @@ const App = () => {
             });
 
           if (!!classIds) {
+            // API 2 => Fetch class details from Classes table
             const classNamesWithStudentIds = await base("Classes")
               .select({
                 view: "Grid view",
@@ -92,6 +94,7 @@ const App = () => {
                 ]),
               ];
 
+              // API 3 => Fetch student names from Students table
               const studentNames = await base("Students")
                 .select({
                   view: "Grid view",
