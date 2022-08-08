@@ -1,4 +1,4 @@
-## Get started
+## Getting started
 
 Add Airtable API Key in .env file, install dependecies via yarn install or npm install and do yarn start.
 
